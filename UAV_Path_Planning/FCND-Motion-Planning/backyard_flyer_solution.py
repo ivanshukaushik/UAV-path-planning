@@ -26,7 +26,7 @@ class BackyardFlyer(Drone):
 
     def __init__(self, connection):
         super().__init__(connection)
-        self.target_position = np.array([0.0, 0.0, 0.0])
+        self.target_position = np.array([100.0, 100.0, 100.0])
         self.all_waypoints = []
         self.in_mission = True
         self.check_state = {}
@@ -71,7 +71,11 @@ class BackyardFlyer(Drone):
 
     def calculate_box(self):
         print("Setting Home")
-        local_waypoints = [[10.0, 0.0, 3.0], [10.0, 10.0, 3.0], [0.0, 10.0, 3.0], [0.0, 0.0, 3.0]]
+        local_waypoints = [[-16.66635506, -16.66432463, 16.78137518],
+        [-33.33243824, -33.33122774, 33.42479102], 
+        [-50.00190179, -49.99854222, 50.00364988], 
+        [-66.66622503, -66.66542488, 66.57019267],
+        [-83.33299162, -83.332681,   83.21427514]]
         return local_waypoints
 
     def arming_transition(self):
