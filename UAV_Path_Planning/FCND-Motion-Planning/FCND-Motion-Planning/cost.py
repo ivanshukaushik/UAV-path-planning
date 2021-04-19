@@ -1,0 +1,1 @@
+def length_cost()
